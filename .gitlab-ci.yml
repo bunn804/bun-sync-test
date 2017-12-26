@@ -1,0 +1,5 @@
+mirror:
+    script:
+        - git config --global push.default simple
+        - git checkout master
+        - git push https://github.com/bunn804/bun-sync-test.git
