@@ -3,5 +3,4 @@ mirror:
         - apk update && apk add git
         - git config --global push.default simple
         - git remote set-url origin https://github.com/bunn804/bun-sync-test.git
-        - git push https://bunn804@github.com/bunn804/bun-sync-test.git HEAD:master
-        - ${GITHUB_TOKEN}
+        - git push https://bunn804:${GITHUB_TOKEN}@github.com/bunn804/bun-sync-test.git HEAD:master
