@@ -1,4 +1,11 @@
 node {
+	agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000'
+        }
+    }
+
    stage 'check environment'
    sh "node -v"
    sh "npm -v"
