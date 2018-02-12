@@ -2,7 +2,7 @@ node {
 
 	agent {
 		docker {
-			image 'node' 
+			image 'node:9.5.0' 
 			args '-p 3000:3000'
 		}
 	}
@@ -12,21 +12,21 @@ node {
    sh "npm -v"
    sh "gulp -v"
 
-   stage 'checkout'
-   checkout scm
-
-   stage 'npm install'
-   sh "npm install"
-
-   stage 'clean'
-   sh "./mvnw clean"
-
-   stage 'backend tests'
-   sh "./mvnw test"
-
-   stage 'frontend tests'
-   sh "gulp test"
-
-   stage 'packaging'
-   sh "./mvnw package -Pprod -DskipTests"
+   #stage 'checkout'
+   #checkout scm
+   
+   #stage 'npm install'
+   #sh "npm install"
+   
+   #stage 'clean'
+   #sh "./mvnw clean"
+   #
+   #stage 'backend tests'
+   #sh "./mvnw test"
+   #
+   #stage 'frontend tests'
+   #sh "gulp test"
+   #
+   #stage 'packaging'
+   #sh "./mvnw package -Pprod -DskipTests"
 }
