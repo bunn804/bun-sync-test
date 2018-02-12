@@ -1,5 +1,12 @@
 node {
 
+	agent {
+		docker {
+			image 'node' 
+			args '-p 3000:3000'
+		}
+	}
+
    stage 'check environment'
    sh "node -v"
    sh "npm -v"
