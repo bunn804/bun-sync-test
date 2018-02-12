@@ -6,6 +6,8 @@ node {
 			args '-p 3000:3000'
 		}
 	}
+	
+	tools {nodejs "Node-9.5.0"}
 
    stage 'check environment'
    sh "node -v"
