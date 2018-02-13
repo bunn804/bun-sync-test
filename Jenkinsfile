@@ -7,6 +7,10 @@ node{
     stage('check java') {
         sh "java -version"
     }
+    
+    stage('check gulp'){
+        sh "gulp -v"
+    }
 
 	/*agent {
 	*	docker {
