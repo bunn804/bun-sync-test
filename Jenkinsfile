@@ -8,11 +8,15 @@ node{
         sh "java -version"
     }
     
-    stage('check gulp'){
-        sh "gulp -v"
+    stage('check node'){
+        sh "node -v"
     }
-
-	/*agent {
+    
+    /*stage('check gulp'){
+    *    sh "gulp -v"
+    *}
+    *
+	*agent {
 	*	docker {
 	*		image 'node:9.5.0' 
 	*		args '-p 3000:3000'
