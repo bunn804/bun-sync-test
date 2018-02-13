@@ -1,4 +1,4 @@
-node {
+node('master') {
 
 	agent {
 		docker {
