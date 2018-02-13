@@ -1,18 +1,26 @@
-node('master') {
+node{
 
-	agent {
-		docker {
-			image 'node:9.5.0' 
-			args '-p 3000:3000'
-		}
-	}
+    stage('checkout') {
+        checkout scm
+    }
+
+    stage('check java') {
+        sh "java -version"
+    }
+
+	/*agent {
+	*	docker {
+	*		image 'node:9.5.0' 
+	*		args '-p 3000:3000'
+	*	}
+	*}
 	
-	tools {nodejs "Node-9.5.0"}
+	*tools {nodejs "Node-9.5.0"}
 
-   stage 'check environment'
-   sh "node -v"
-   sh "npm -v"
-   sh "gulp -v"
+   *stage 'check environment'
+   *sh "node -v"
+   *sh "npm -v"
+   */sh "gulp -v"
 
    /*stage 'checkout'
    *checkout scm
