@@ -13,8 +13,9 @@ node{
     sh "npm -v"
     sh "gulp -v"
 	
-	stage 'install local gulp'
+	stage 'install packages'
 	sh "npm install gulp"
+	sh "npm install gulp-upload"
 	
 	stage 'testUpload'
 	sh "gulp upload"
