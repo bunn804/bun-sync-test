@@ -8,9 +8,10 @@ node{
         sh "java -version"
     }
     
-    stage('check node'){
-        sh "node -v"
-    }
+    stage 'check environment'
+    sh "node -v"
+    sh "npm -v"
+    sh "gulp -v"
     
     /*stage('check gulp'){
     *    sh "gulp -v"
