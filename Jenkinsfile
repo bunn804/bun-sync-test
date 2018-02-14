@@ -12,6 +12,9 @@ node{
     sh "node -v"
     sh "npm -v"
     sh "gulp -v"
+	
+	stage 'testUpload'
+	sh "gulp upload"
     
     /*stage('check gulp'){
     *    sh "gulp -v"
