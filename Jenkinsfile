@@ -1,13 +1,14 @@
 node {
-
-	agent {
-		docker {
-			image 'node:9.5.0' 
-			args '-p 3000:3000'
-		}
-	}
-	
-	tools {nodejs "Node-9.5.0"}
+	/*
+	*agent {
+	*	docker {
+	*		image 'node:9.5.0' 
+	*		args '-p 3000:3000'
+	*	}
+	*}
+	*
+	*tools {nodejs "Node-9.5.0"}
+	*/
 
    stage 'check environment'
    sh "node -v"
@@ -30,5 +31,6 @@ node {
    *sh "gulp test"
    *
    *stage 'packaging'
-   */sh "./mvnw package -Pprod -DskipTests"
+   *sh "./mvnw package -Pprod -DskipTests"
+   */
 }
