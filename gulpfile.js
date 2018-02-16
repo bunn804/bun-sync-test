@@ -4,7 +4,7 @@ var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
  
 var options = {
-  server: 'http://192.168.1.125:8484/testUpload',
+  server: 'http://192.168.1.125:8484/web',
   data: {
     dirname: 'testUpload'
   },
