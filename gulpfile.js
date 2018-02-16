@@ -4,7 +4,7 @@ var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
  
 var options = {
-  server: 'http://192.168.1.125:8484/web',
+  server: 'http://192.168.1.125/web',
   data: {
     dirname: 'testUpload'
   },
@@ -33,7 +33,7 @@ gulp.task( 'deploy', function () {
     } );
  
     var globs = [
-        'testUpload/**',
+        'web/testUpload/**',
     ];
  
     // using base = '.' will transfer everything to /public_html correctly
