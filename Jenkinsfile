@@ -16,9 +16,11 @@ node{
 	stage 'install packages'
 	sh "npm install gulp"
 	sh "npm install gulp-upload"
+	sh "npm install vinyl-ftp"
+	sh "npm install gulp-util"
 	
 	stage 'testUpload'
-	sh "gulp upload"
+	sh "gulp deploy"
     
     /*stage('check gulp'){
     *    sh "gulp -v"
