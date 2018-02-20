@@ -3,7 +3,6 @@ mirror:
         - apk update && apk add git
         - git config --global push.default matching
         - for remote in `git branch -r | grep -v master `; do git checkout --track $remote ; done
-        - git push --all
         - git remote set-url origin https://github.com/bunn804/bun-sync-test.git
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git --mirror
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git HEAD:master
