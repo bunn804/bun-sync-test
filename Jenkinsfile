@@ -9,6 +9,9 @@ node{
         
     stage 'install packages'
         sh "npm install gulp"
+        sh "npm install gulp-upload"
+        sh "npm install vinyl-ftp"
+        sh "npm install gulp-util"
     
     stage 'check environment'
         sh "node -v"
@@ -22,12 +25,6 @@ node{
     *    sh "npm install vinyl-ftp"
     *
     */
-    
-    post{
-        always{
-            echo 'this is post'
-        }
-    }
 	
 	/*
 	*post{
