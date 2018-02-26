@@ -17,6 +17,7 @@ node{
         sh "node -v"
         sh "npm -v"
         sh "gulp -v"
+        sh "curl --version"
         
     /*
     *stage 'install packages'
