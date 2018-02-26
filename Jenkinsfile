@@ -19,6 +19,9 @@ node{
         sh "gulp -v"
         sh "curl --version"
         
+    stage 'ls folder'
+        sh "ls"
+        
     /*
     *stage 'install packages'
     *    sh "npm install gulp"
