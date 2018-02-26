@@ -6,6 +6,9 @@ node{
     
     stage 'check java'
         sh "java -version"
+        
+    stage 'install packages'
+        sh "npm install gulp"
     
     stage 'check environment'
         sh "node -v"
