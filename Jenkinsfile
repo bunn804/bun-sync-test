@@ -22,6 +22,9 @@ node{
     stage 'ls folder'
         sh "ls"
         
+    stage 'FTP Upload'
+        sh "curl -T testUpload/** ftp://192.168.1.125 -P 21 --user $ftpUsername:$ftpPassword"
+        
     /*
     *stage 'install packages'
     *    sh "npm install gulp"
