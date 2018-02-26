@@ -1,25 +1,21 @@
 node{
 
-    stage('checkout') {
+    stage 'checkout'
         checkout scm
-    }
-
-    stage('check java') {
-        sh "java -version"
-    }
     
-    stage ('check environment'){
+    stage 'check java'
+        sh "java -version"
+    
+    stage 'check environment'
         sh "node -v"
         sh "npm -v"
         sh "gulp -v"
-    }
-	
-	stage ('install packages'){
-	    sh "npm install gulp"
-	    sh "npm install gulp-upload"
-	    sh "npm install vinyl-ftp"
-	    sh "npm install gulp-util"
-	}
+        
+    stage 'install packages'
+        sh "npm install gulp"
+        sh "npm install gulp-upload"
+        sh "npm install vinyl-ftp"
+        sh "npm install gulp-util"
 	
 	/*
 	*post{
