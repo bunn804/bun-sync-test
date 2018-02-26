@@ -1,0 +1,2 @@
+this is a test for the ftp upload.
+If it's in /web/ would means it's a success
