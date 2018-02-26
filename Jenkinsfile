@@ -21,13 +21,14 @@ node{
 	    sh "npm install gulp-util"
 	}
 	
-	post{
-		always{
-			echo 'this is post'
-		}
-	}
-	
 	/*
+	*post{
+	*	always{
+	*		echo 'this is post'
+	*	}
+	*}
+	*
+	*
 	*stage 'testUpload'
 	*sh "gulp deploy"
 	*
