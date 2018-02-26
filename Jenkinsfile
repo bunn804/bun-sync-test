@@ -19,10 +19,17 @@ node{
 	sh "npm install vinyl-ftp"
 	sh "npm install gulp-util"
 	
-	stage 'testUpload'
-	sh "gulp deploy"
-    
-    /*stage('check gulp'){
+	post{
+		always{
+			echo 'this is post'
+		}
+	}
+	
+	/*
+	*stage 'testUpload'
+	*sh "gulp deploy"
+	*
+	*stage('check gulp'){
     *    sh "gulp -v"
     *}
     *
