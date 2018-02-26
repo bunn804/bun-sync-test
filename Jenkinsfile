@@ -23,7 +23,7 @@ node{
         sh "ls"
         
     stage 'FTP Upload'
-        sh "curl -T testUpload/** ftp://192.168.1.125 -P 21 --user $ftpUsername:$ftpPassword"
+        curl -T testUpload/** ftp://192.168.1.125 -P 21 --user $ftpUsername:$ftpPassword
         
     /*
     *stage 'install packages'
