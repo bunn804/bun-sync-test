@@ -12,10 +12,13 @@ node{
         sh "npm -v"
         sh "gulp -v"
         
-    stage 'install packages'
-        sh "npm install gulp"
-        sh "npm install gulp-upload"
-        sh "npm install vinyl-ftp"
+    /*
+    *stage 'install packages'
+    *    sh "npm install gulp"
+    *    sh "npm install gulp-upload"
+    *    sh "npm install vinyl-ftp"
+    *
+    */
     
     post{
         always{
