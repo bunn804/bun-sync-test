@@ -17,6 +17,12 @@ node{
         sh "npm install gulp-upload"
         sh "npm install vinyl-ftp"
         sh "npm install gulp-util"
+    
+    post{
+        always{
+            echo 'this is post'
+        }
+    }
 	
 	/*
 	*post{
