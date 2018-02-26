@@ -23,10 +23,10 @@ node{
         sh "ls"
         
     stage 'FTP Upload'
-        withCredentials([string(credentialsId: 'ftpUsername', variable: 'USER'), string(credentialsId: 'ftpPassword', variable: 'PW')]) {
+        withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
             sh "curl -T testUpload/** ftp://192.168.1.125 \
             -P 21 \
-            --user USER:PW"
+            --user LOGIN"
     }
 	
     /*
