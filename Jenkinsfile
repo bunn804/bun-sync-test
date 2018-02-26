@@ -2,6 +2,7 @@ node{
 
     stage 'checkout'
         checkout scm
+        echo 'check out'
     
     stage 'check java'
         sh "java -version"
