@@ -16,7 +16,6 @@ node{
         sh "npm install gulp"
         sh "npm install gulp-upload"
         sh "npm install vinyl-ftp"
-        sh "npm install gulp-util"
     
     post{
         always{
@@ -33,6 +32,7 @@ node{
 	*
 	*
 	*stage 'testUpload'
+	*sh "npm install gulp-util"
 	*sh "gulp deploy"
 	*
 	*stage('check gulp'){
