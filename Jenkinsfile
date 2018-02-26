@@ -23,10 +23,12 @@ node{
         sh "ls"
         
     stage 'FTP Upload'
-        sh "curl -T testUpload/** ftp://192.168.1.125 \
-        -P 21 \
-        --user $ftpUsername:$ftpPassword"
-        
+		withCredentials([file(credentialsId: 'ftpUsername', variable: 'USER'), file(credentialsId: 'ftpPassword', variable: 'PW')]) {
+			sh "curl -T testUpload/** ftp://192.168.1.125 \
+			-P 21 \
+			--user USER:PW"
+    }
+	
     /*
     *stage 'install packages'
     *    sh "npm install gulp"
