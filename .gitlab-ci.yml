@@ -3,8 +3,8 @@ mirror:
         - apk update && apk add git
         - git config --global push.default matching
         - git remote set-url origin https://github.com/bunn804/bun-sync-test.git
-        - git config --global user.email "bunnasorn@bitegginc.com"
-        - git config --global user.name "Bunnasorn"
+        - git config user.email "bunnasorn@bitegginc.com"
+        - git config user.name "Bunnasorn"
         - git pull origin master
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git --mirror
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git HEAD:master
