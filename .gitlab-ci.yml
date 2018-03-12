@@ -4,7 +4,8 @@ mirror:
         - git remote -v
         - git config --global push.default matching
         - git remote set-url origin https://github.com/bunn804/bun-sync-test.git
-        - git pull origin
+        - git branch master
+        - git pull origin master
         - git remote -v
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git --mirror
         - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/bunn804/bun-sync-test.git HEAD:master
