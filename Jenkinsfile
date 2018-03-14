@@ -24,10 +24,11 @@ node{
         
     stage 'FTP Upload'
         withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
-            sh 'find ./testUpload/ -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN +""'
+            sh 'scp -r testUpload/* $LOGIN@192.168.1.125:web/testUpload/'
         }
 	
     /*
+    * find ./testUpload/ -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN +""
     *stage 'install packages'
     *    sh "npm install gulp"
     *    sh "npm install gulp-upload"
