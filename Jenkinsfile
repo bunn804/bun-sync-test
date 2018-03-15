@@ -23,7 +23,7 @@ node{
         sh "ls"
         
     stage 'FTP Upload'
-        withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
+        withCredentials([usernameColonPassword(credentialsId: 'ftpUsername', variable: 'LOGIN')]) {
             sh 'scp -r testUpload/* $LOGIN@192.168.1.125:web/testUpload/'
         }
 	
