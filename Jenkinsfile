@@ -22,9 +22,9 @@ node{
     stage 'ls folder'
         sh "ls"
         
-    stage 'smb upload'
+    stage 'FTP upload'
         withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
-            sh "wput --basename=testUpload/ -u /testUpload/*.* ftp://$LOGIN@192.168.1.125/web/testUpload"
+            sh "find testUpload/* -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN \\;"
        }
     
     /*
