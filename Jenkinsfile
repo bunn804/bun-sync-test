@@ -24,10 +24,11 @@ node{
         
     stage 'smb upload'
         withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
-            sh 'curl -T testUpload/* -u $LOGIN smb://egg/web/testUpload'
+            sh'wput --basename=testUpload/ -u /testUpload/*.* ftp://$LOGIN@192.168.1.125/web/testUpload'
        }
     
     /*
+    *sh 'curl -T testUpload/* -u $LOGIN smb://egg/web/testUpload'
     *
     *stage 'FTP Upload'
     *    withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
