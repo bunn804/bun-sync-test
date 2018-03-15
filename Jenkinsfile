@@ -22,12 +22,19 @@ node{
     stage 'ls folder'
         sh "ls"
         
-    stage 'FTP Upload'
+    stage 'smb upload'
         withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
-            sh 'scp -r testUpload/* $LOGIN@192.168.1.125:web/testUpload/'
-        }
-	
+            sh 'curl -T testUpload/* -u $LOGIN \ smb://egg/web/testUpload'
+       }
+    
     /*
+    *
+    *stage 'FTP Upload'
+    *    withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
+    *        sh 'scp -r testUpload/* $LOGIN@192.168.1.125:web/testUpload/'
+    *    }
+    *	
+    *
     * find ./testUpload/ -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN +""
     *stage 'install packages'
     *    sh "npm install gulp"
