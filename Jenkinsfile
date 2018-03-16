@@ -24,7 +24,7 @@ node{
         
     stage 'FTP upload'
         withCredentials([usernameColonPassword(credentialsId: 'FTPLogin', variable: 'LOGIN')]) {
-            sh "find testUpload/just another file.txt -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN \\;"
+            sh "find testUpload/*.txt -exec curl -T {} ftp://192.168.1.125/web/testUpload --user $LOGIN \\;"
        }
     
     /*
