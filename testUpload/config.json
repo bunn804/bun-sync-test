@@ -1,0 +1,21 @@
+{
+    "GameSetting":{
+        "bubbleHighSpeed" : 42.56,
+        "bubbleNormalSpeed" : 32,
+        "FreezeTime" : 6000,
+        "gameOverTime" : 6000,
+        "gridSpeedY" : 12,
+        "holdBackTime" : 32,
+        "maxRushGridSpeedY" : 150,
+        "minRushGridSpeedY" : 60,
+        "mouseCountdownTimer" : 30000,
+        "mouseSpawnTime" : 300000,
+        "pushBackSpeed" : 400,
+        "pushBackSpeedMax" : 500,
+        "pushBackSpeedMin" : 200,
+        "pushBackTime" : 200,
+        "rushGridSpeedY" : 60,
+        "normalEpsilon" : 0.85,
+        "smallEpsilon" : 0.6
+    }
+}

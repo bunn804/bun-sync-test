@@ -1,0 +1,70 @@
+{
+	"alpha": {
+		"start": 5,
+		"end": 0
+	},
+	"scale": {
+		"start": 1,
+		"end": 0.9,
+		"minimumScaleMultiplier": 0.6
+	},
+	"color": {
+		"start": "#9900cc",
+		"end": "#9900cc"
+	},
+	"speed": {
+		"start": 1120,
+		"end": 5,
+		"minimumSpeedMultiplier": 0.7
+	},
+	"acceleration": {
+		"x": 0,
+		"y": 0
+	},
+	"maxSpeed": 0,
+	"startRotation": {
+		"min": 0,
+		"max": -180
+	},
+	"noRotation": false,
+	"rotationSpeed": {
+		"min": 45,
+		"max": 45
+	},
+	"lifetime": {
+		"min": 1,
+		"max": 1
+	},
+	"blendMode": "add",
+	"ease": [
+		{
+			"s": 0,
+			"cp": 0.5856,
+			"e": 0.7565
+		},
+		{
+			"s": 0.7565,
+			"cp": 0.9274,
+			"e": 0.95259
+		},
+		{
+			"s": 0.95259,
+			"cp": 0.9778,
+			"e": 1
+		}
+	],
+	"frequency": 0.01,
+	"emitterLifetime": 0.1,
+	"maxParticles": 10,
+	"pos": {
+		"x": 0,
+		"y": 0
+	},
+	"addAtBack": false,
+	"spawnType": "circle",
+	"spawnCircle": {
+		"x": 0,
+		"y": 0,
+		"r": 20
+	}
+}

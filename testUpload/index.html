@@ -1,0 +1,255 @@
+<html>
+    <head>
+        <script src="scripts.min.js" type="text/javascript"></script>
+        <script src="howler.min.js"></script>
+        <script src="GameAnalytics.min.js"></script>
+        <script src="nakama-js.umd.js"></script>
+        <script src="pixi.min.js" type="text/javascript"></script>
+        <script src="pixi-display.js" type="text/javascript"></script>
+        <script src="pixi-particles.min.js" type="text/javascript"></script>
+        <script src="pixi-spine.js" type="text/javascript"></script>
+        <script src="pixi-tween.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function toggleDebugMenu()
+            {
+                var div = document.getElementById("debugContent");
+                
+                if(div.style.display == "")
+                {
+                    div.style.display = "none";
+                }
+                else
+                {
+                    div.style.display = "";
+                }
+            }
+            function goFullScreen()
+            {
+                Main.instance.engine.switchFullscreen();
+            }
+        </script>
+        <style>
+            body, html{
+                margin:0;
+                padding:0;
+                width:100vw;
+                height:100vh;
+                background-color:black;
+                overflow: hidden;
+            }
+            .debug_div
+            {
+                background-color:black;
+                
+                position:absolute;
+                left: 0%;
+                top:0;
+                color:#00FF00;
+                border: 2px #00FF00 solid;
+                font-family: Courier New, Courier, monospace;
+                font-size: 10;
+                text-align: center;
+            }
+            .debug_div > :first-child:hover
+            {
+                cursor:pointer;
+                color:white;
+            }
+            .debug_div > div
+            {
+                margin-top:10px;
+            }
+            .debug_div > :nth-child(2) > table
+            {
+                width:100%;
+                color:#00FF00;
+            }
+            .debug_div > :nth-child(2) > table td
+            {
+                width:50%;
+                padding-top:5px;
+                font-size:20;
+            }
+            .debug_div button
+            {
+                background:#00FF00;
+                color:black;
+                border:#00FF00 solid 2px;
+                font-family: Courier New, Courier, monospace;
+                font-size:25px;
+                font-weight:bold;
+            }
+            .debug_div input:hover
+            {
+                color:white;
+                border-color:white;
+            }
+            .debug_div button:hover
+            {
+                border: 2px solid white;
+                background:white;
+            }
+            .debug_div button:hover:active
+            {
+                border:2px solid grey;
+                background:grey;
+            }
+            .debug_div input
+            {
+                width:200;
+                text-align:right;
+                color:#00FF00;
+                background-color:black;
+                border:#00FF00 2px solid;
+                font-family: Courier New, Courier, monospace;
+                height:40px;
+                font-size:35;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content" style="margin:auto"></div>
+        <div class="canvas_div">
+            <canvas id="canvas" style="width:128.25vh;height:50%;touch-action:none" touch-action="none"></canvas>
+        </div>
+        <!--div class="debug_div">
+            <div onclick="toggleDebugMenu()">
+                <h1>Debug</h1>
+                <p id="debugText"></p>
+            </div>
+            <div id="debugContent" style="display:none">
+                <table>
+                    <tr>
+                        <td>
+                            gridSpeedY
+                        </td>
+                        <td>
+                            <input type="number" id="gridSpeedY" min="1"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            rushGridSpeedY
+                        </td>
+                        <td>
+                            <input type="number" id="rushGridSpeedY" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            maxRushGridSpeedY
+                        </td>
+                        <td>
+                            <input type="number" id="maxRushGridSpeedY" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            minRushGridSpeedY
+                        </td>
+                        <td>
+                            <input type="number" id="minRushGridSpeedY" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            pushBackSpeed
+                        </td>
+                        <td>
+                            <input type="number" id="pushBackSpeed" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            pushBackSpeedMin
+                        </td>
+                        <td>
+                            <input type="number" id="pushBackSpeedMin" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            pushBackSpeedMax
+                        </td>
+                        <td>
+                            <input type="number" id="pushBackSpeedMax" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            pushBackTime
+                        </td>
+                        <td>
+                            <input type="number" id="pushBackTime" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            holdBackTime
+                        </td>
+                        <td>
+                            <input type="number" id="holdBackTime" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            FreezeTime
+                        </td>
+                        <td>
+                            <input type="number" id="FreezeTime" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mouseSpawnTime
+                        </td>
+                        <td>
+                            <input type="number" id="mouseSpawnTime" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            gameOverTime
+                        </td>
+                        <td>
+                            <input type="number" id="gameOverTime" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            bubbleNormalSpeed
+                        </td>
+                        <td>
+                            <input type="number" id="bubbleNormalSpeed" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            bubbleHighSpeed
+                        </td>
+                        <td>
+                            <input type="number" id="bubbleHighSpeed" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            normalEpsilon
+                        </td>
+                        <td>
+                            <input type="number" id="normalEpsilon" min="0"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            smallEpsilon
+                        </td>
+                        <td>
+                            <input type="number" id="smallEpsilon" min="0"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div-->
+    </body>
+</html>

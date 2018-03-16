@@ -1,0 +1,69 @@
+
+bubble_intro.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+_city_01
+  rotate: false
+  xy: 1086, 1507
+  size: 540, 437
+  orig: 540, 437
+  offset: 0, 0
+  index: -1
+_city_02
+  rotate: false
+  xy: 1086, 1238
+  size: 540, 267
+  orig: 540, 267
+  offset: 0, 0
+  index: -1
+_city_03
+  rotate: true
+  xy: 1628, 1404
+  size: 540, 156
+  orig: 540, 156
+  offset: 0, 0
+  index: -1
+_city_04
+  rotate: false
+  xy: 544, 331
+  size: 540, 156
+  orig: 540, 156
+  offset: 0, 0
+  index: -1
+_mount
+  rotate: false
+  xy: 544, 828
+  size: 540, 506
+  orig: 540, 506
+  offset: 0, 0
+  index: -1
+_sky
+  rotate: false
+  xy: 2, 2
+  size: 540, 941
+  orig: 540, 941
+  offset: 0, 0
+  index: -1
+_top
+  rotate: false
+  xy: 2, 945
+  size: 540, 999
+  orig: 540, 999
+  offset: 0, 0
+  index: -1
+_town_01
+  rotate: false
+  xy: 544, 1336
+  size: 540, 608
+  orig: 540, 608
+  offset: 0, 0
+  index: -1
+_town_02
+  rotate: false
+  xy: 544, 489
+  size: 540, 337
+  orig: 540, 337
+  offset: 0, 0
+  index: -1
